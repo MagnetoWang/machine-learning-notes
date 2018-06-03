@@ -14,7 +14,7 @@ from sklearn.datasets import load_sample_image
 from sklearn.utils import shuffle
 from time import time
 
-n_colors = 64
+n_colors = 3
 
 # Load the Summer Palace photo
 china = load_sample_image("china.jpg")
