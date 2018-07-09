@@ -47,28 +47,38 @@ def pca(data,n_components):
     print(components.shape)
     print("X_transformed.shape")
     print(X_transformed.shape)
-    plt.imshow(X_transformed,cmap='Greys_r')
-    plt.show()
-
-
-    reconstrutX=np.dot(X_transformed, components) + mean
+    #plt.imshow(X_transformed,cmap='Greys_r')
+    #plt.show()
     
+    newimage = X_transformed[0,:]
+    newimage=newimage.reshape(1,83)
+    
+    print(newimage.shape)
+    print("components")
+    print(components.shape)
+    reconstrutX=np.dot(X_transformed, components) + mean
+    reimage=np.dot(newimage, components) + mean
     print("reconstrutX.shape")
     print(reconstrutX.shape)
+    reimage=reimage.reshape(384,256)
 
-
-    plt.imshow(reconstrutX,cmap='Greys_r')
+    plt.imshow(reimage,cmap='Greys_r')
     plt.show()
     return 
 
     
-    
+
+image=mpimg.imread('0.jpg')
+n_components =0.2
+plt.imshow(image,cmap='Greys_r')
+plt.show()
+'''    
 image=mpimg.imread('0.jpg')
 n_components =0.95
 plt.imshow(image,cmap='Greys_r')
 plt.show()
 pca(image,n_components)
-
+'''
 #print(image.shape)
 def numberofImage(image):
     data=np.array(image.reshape(1,384*256))
@@ -76,11 +86,11 @@ def numberofImage(image):
     #print(data.shape)
     for i in range(100):
         filename='灰度图片/'+str(i)+'.jpg'
-        print(filename)
+        #print(filename)
         image=mpimg.imread(filename)
-        print(image.shape)
+        #print(image.shape)
         #print("data : ")
-        print(data.shape)
+        #print(data.shape)
         data=np.vstack((data,image.reshape(1,384*256)))
         #data=np.vstack((data,image))
         #print(data.shape)
