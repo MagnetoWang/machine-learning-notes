@@ -18,4 +18,5 @@
 - 国内用户
   - 镜像网站：https://gitee.com/mirrors/deeplearning4j
   - https://gitee.com/DaRKeViL/dl4j-examples
-- 
+- 对目录文件夹：mvn clean install
+- 我发觉总是会出现编译失败的问题，烦
